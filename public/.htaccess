@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#Accept the download of real files and catalogs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Send everything else to the index page
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
